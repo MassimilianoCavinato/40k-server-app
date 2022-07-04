@@ -18,7 +18,7 @@ class App {
    constructor() {
       this.app = express();
       this.config();
-      this.mongoSetup();
+      // this.mongoSetup();
       this.test_routes.route(this.app);
       this.roster_routes.route(this.app);
       this.common_routes.route(this.app);
@@ -31,9 +31,9 @@ class App {
       this.app.use(bodyParser.urlencoded({ extended: false }));
    }
 
-   private mongoSetup(): void {
-      mongoose.connect(this.mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false });
-   }
+   // private mongoSetup(): void {
+   //    mongoose.connect(this.mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false });
+   // }
 
 }
 export default new App().app;
